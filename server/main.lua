@@ -1,7 +1,10 @@
-ESX = nil
-
+if _bConfig.NewEsx == false then
+    ESX = nil
     TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-                                                                                        
+else
+    ESX = exports["es_extended"]:getSharedObject()
+end
+
 -----------------Function to created Informations Personnals                              
                                                                                        
 function barwoz_getIdentity(source, callback)
