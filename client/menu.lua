@@ -1,13 +1,9 @@
-ESX = nil
-
-CreateThread(function()
-	while ESX == nil do
-		TriggerEvent(Config.Init['ESX'], function(obj) ESX = obj end)
-		Wait(0)
-	end
-
-    ESX.PlayerData = ESX.GetPlayerData()
-end)
+if _bConfig.NewEsx == false then
+    ESX = nil
+    TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+else
+    ESX = exports["es_extended"]:getSharedObject()
+end
 
 local creamenu, name, prenom, sex, date, taille = false, "...", "...", "...", "../../....", "..."
 local rightname = true
