@@ -1,5 +1,7 @@
 Config = {}
 
+Config.NewEsx = true
+
 Config.EnableDesc = false
 
 Config.Init = {
